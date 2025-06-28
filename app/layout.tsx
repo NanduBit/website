@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -89,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-TileColor" content="#000000" />
@@ -98,7 +99,11 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="hi" href="https://kvsangathan.nic.in/hi" />
         <link rel="alternate" hrefLang="en" href="https://kvsangathan.nic.in" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ThemeProvider defaultTheme="light" storageKey="kvs-theme">
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

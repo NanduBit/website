@@ -95,10 +95,14 @@ const timelineEvents: TimelineEvent[] = [
 ]
 
 const categoryColors = {
-  founding: "bg-black text-white border-black",
-  expansion: "bg-neutral-800 text-white border-neutral-800",
-  achievement: "bg-neutral-600 text-white border-neutral-600",
-  modernization: "bg-neutral-700 text-white border-neutral-700",
+  founding:
+    "bg-black dark:bg-gradient-to-r dark:from-blue-600 dark:to-blue-700 text-white border-black dark:border-blue-500",
+  expansion:
+    "bg-neutral-800 dark:bg-gradient-to-r dark:from-blue-500 dark:to-blue-600 text-white border-neutral-800 dark:border-blue-400",
+  achievement:
+    "bg-neutral-600 dark:bg-gradient-to-r dark:from-blue-700 dark:to-blue-800 text-white border-neutral-600 dark:border-blue-600",
+  modernization:
+    "bg-neutral-700 dark:bg-gradient-to-r dark:from-blue-600 dark:to-blue-700 text-white border-neutral-700 dark:border-blue-500",
 }
 
 const categoryLabels = {
@@ -110,17 +114,17 @@ const categoryLabels = {
 
 export function InteractiveTimeline() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white relative z-10">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 relative z-10 transition-colors duration-300">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-black rounded-full mb-4 sm:mb-6 hover:scale-110 hover:rotate-180 transition-all duration-700 cursor-pointer">
+          <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-black dark:bg-gradient-to-br dark:from-blue-600 dark:to-blue-700 rounded-full mb-4 sm:mb-6 hover:scale-110 hover:rotate-180 transition-all duration-700 cursor-pointer shadow-lg dark:shadow-blue-500/30">
             <Calendar className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-white" />
           </div>
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6 tracking-tight hover:text-gray-800 transition-colors duration-300">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-4 sm:mb-6 tracking-tight hover:text-gray-800 dark:hover:text-blue-200 transition-colors duration-300">
             Our Journey Through Time
           </h3>
-          <p className="text-base sm:text-lg lg:text-xl text-neutral-600 max-w-2xl sm:max-w-3xl mx-auto hover:text-neutral-800 transition-colors duration-300 px-4">
+          <p className="text-base sm:text-lg lg:text-xl text-neutral-600 dark:text-gray-400 max-w-2xl sm:max-w-3xl mx-auto hover:text-neutral-800 dark:hover:text-gray-300 transition-colors duration-300 px-4">
             Six decades of educational excellence, innovation, and growth across India
           </p>
         </div>
@@ -128,7 +132,7 @@ export function InteractiveTimeline() {
         {/* Timeline */}
         <div className="relative max-w-6xl mx-auto">
           {/* Timeline Line */}
-          <div className="absolute left-4 sm:left-8 lg:left-1/2 lg:transform lg:-translate-x-0.5 top-0 bottom-0 w-1 bg-gradient-to-b from-black via-neutral-600 to-neutral-400 rounded-full"></div>
+          <div className="absolute left-4 sm:left-8 lg:left-1/2 lg:transform lg:-translate-x-0.5 top-0 bottom-0 w-1 bg-gradient-to-b from-black dark:from-blue-500 via-neutral-600 dark:via-blue-400 to-neutral-400 dark:to-blue-600 rounded-full"></div>
 
           {/* Timeline Events */}
           <div className="space-y-8 sm:space-y-12 lg:space-y-16">
@@ -139,7 +143,7 @@ export function InteractiveTimeline() {
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-4 sm:left-8 lg:left-1/2 lg:transform lg:-translate-x-1/2 z-10">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full border-4 border-white shadow-2xl bg-black group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 cursor-pointer flex items-center justify-center">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full border-4 border-white dark:border-gray-950 shadow-2xl dark:shadow-blue-500/30 bg-black dark:bg-gradient-to-br dark:from-blue-600 dark:to-blue-700 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 cursor-pointer flex items-center justify-center">
                     <event.icon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                   </div>
                 </div>
@@ -148,28 +152,32 @@ export function InteractiveTimeline() {
                 <div
                   className={`ml-12 sm:ml-16 lg:ml-0 lg:w-5/12 ${index % 2 === 0 ? "lg:mr-auto lg:pr-8" : "lg:ml-auto lg:pl-8"}`}
                 >
-                  <Card className="group-hover:shadow-2xl group-hover:-translate-y-3 transition-all duration-700 border-2 border-neutral-200 overflow-hidden bg-white backdrop-blur-sm hover:border-neutral-400">
+                  <Card className="group-hover:shadow-2xl dark:group-hover:shadow-blue-500/20 group-hover:-translate-y-3 transition-all duration-700 border-2 border-neutral-200 dark:border-gray-700 overflow-hidden bg-white dark:bg-gray-800 backdrop-blur-sm hover:border-neutral-400 dark:hover:border-blue-500/50">
                     <CardContent className="p-6 sm:p-8">
                       {/* Header */}
                       <div className="flex items-center justify-between mb-4 sm:mb-6">
                         <div className="flex items-center space-x-3 sm:space-x-4">
-                          <Badge className={`${categoryColors[event.category]} text-sm font-medium px-3 py-1`}>
+                          <Badge
+                            className={`${categoryColors[event.category]} text-sm font-medium px-3 py-1 shadow-lg dark:shadow-blue-500/20`}
+                          >
                             {categoryLabels[event.category]}
                           </Badge>
-                          <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">{event.year}</span>
+                          <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white">
+                            {event.year}
+                          </span>
                         </div>
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-gradient-to-br dark:from-blue-600 dark:to-blue-700 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg dark:shadow-blue-500/30">
                           <event.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                         </div>
                       </div>
 
                       {/* Title */}
-                      <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-3 sm:mb-4 group-hover:text-gray-800 transition-colors duration-300 leading-tight">
+                      <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300 leading-tight">
                         {event.title}
                       </h4>
 
                       {/* Description */}
-                      <p className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-4 sm:mb-6 group-hover:text-gray-800 transition-colors duration-300">
+                      <p className="text-base sm:text-lg text-neutral-600 dark:text-gray-400 leading-relaxed mb-4 sm:mb-6 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors duration-300">
                         {event.description}
                       </p>
 
@@ -177,8 +185,8 @@ export function InteractiveTimeline() {
                       <div className="space-y-2 sm:space-y-3">
                         {event.highlights.map((highlight, idx) => (
                           <div key={idx} className="flex items-center space-x-3 group/item">
-                            <div className="w-2 h-2 bg-black rounded-full group-hover/item:scale-150 transition-transform duration-300"></div>
-                            <span className="text-sm sm:text-base text-neutral-700 group-hover/item:text-black group-hover/item:translate-x-1 transition-all duration-300">
+                            <div className="w-2 h-2 bg-black dark:bg-blue-500 rounded-full group-hover/item:scale-150 transition-transform duration-300"></div>
+                            <span className="text-sm sm:text-base text-neutral-700 dark:text-gray-300 group-hover/item:text-black dark:group-hover/item:text-white group-hover/item:translate-x-1 transition-all duration-300">
                               {highlight}
                             </span>
                           </div>
@@ -194,11 +202,11 @@ export function InteractiveTimeline() {
 
         {/* Timeline Summary */}
         <div className="mt-16 sm:mt-20 lg:mt-24 text-center">
-          <div className="bg-gradient-to-r from-neutral-50 via-white to-neutral-50 border-2 border-neutral-200 rounded-2xl p-6 sm:p-8 lg:p-10 max-w-4xl mx-auto hover:shadow-xl transition-all duration-500">
-            <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4 sm:mb-6">
+          <div className="bg-gradient-to-r from-neutral-50 dark:from-gray-900 via-white dark:via-gray-800 to-neutral-50 dark:to-gray-900 border-2 border-neutral-200 dark:border-gray-700 rounded-2xl p-6 sm:p-8 lg:p-10 max-w-4xl mx-auto hover:shadow-xl dark:hover:shadow-blue-500/20 transition-all duration-500">
+            <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-4 sm:mb-6">
               60+ Years of Excellence
             </h4>
-            <p className="text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-neutral-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
               From a single school in 1963 to a network of 1200+ institutions serving 13+ lakh students, KVS continues
               to be India's premier educational organization, committed to excellence, innovation, and holistic
               development.
