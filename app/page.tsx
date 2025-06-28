@@ -409,40 +409,17 @@ export default function KendrivaVidyalayaWebsite() {
             </p>
           </div>
         </div>
-        {/* Enhanced Disclaimer Warning */}
-        <div className="relative z-10 border-t border-neutral-700 dark:border-gray-700 pt-8 sm:pt-12 mt-6 sm:mt-8">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-neutral-900 dark:from-gray-900 via-black dark:via-gray-950 to-neutral-900 dark:to-gray-900 border-2 border-neutral-400 dark:border-blue-500/30 rounded-lg sm:rounded-xl p-4 sm:p-6 max-w-4xl mx-auto hover:border-neutral-300 dark:hover:border-blue-500/50 transition-all duration-300 backdrop-blur-md shadow-2xl dark:shadow-blue-500/10">
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-3 sm:mb-4">
-                  <svg
-                    className="h-5 w-5 sm:h-6 sm:w-6 text-neutral-300 dark:text-blue-400 mr-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"
-                    />
-                  </svg>
-                  <h6 className="text-base sm:text-lg font-bold text-neutral-200 dark:text-blue-300">DISCLAIMER</h6>
-                </div>
-
-                <p className="text-neutral-300 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 px-2">
-                  This website is <strong className="text-white dark:text-blue-200">NOT officially affiliated</strong>{" "}
-                  with Kendriya Vidyalaya Sangathan (KVS) or the Government of India. Created for{" "}
-                  <strong className="text-white dark:text-blue-200">educational purposes only</strong>.
-                </p>
-
-                <p className="text-neutral-400 dark:text-gray-400 text-xs">
-                  For official information, visit{" "}
-                  <span className="text-neutral-200 dark:text-blue-300 font-medium">kvsangathan.nic.in</span>
-                </p>
-              </div>
-            </div>
+        {/* Simple Text Disclaimer */}
+        <div className="relative z-10 py-8 sm:py-12">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-neutral-400 dark:text-gray-400 text-xs sm:text-sm leading-relaxed max-w-4xl mx-auto">
+              <strong className="text-neutral-300 dark:text-gray-300">DISCLAIMER:</strong> This website is{" "}
+              <strong className="text-white dark:text-blue-200">NOT officially affiliated</strong> with Kendriya
+              Vidyalaya Sangathan (KVS) or the Government of India. Created for{" "}
+              <strong className="text-white dark:text-blue-200">educational purposes only</strong>. For official
+              information, visit{" "}
+              <span className="text-neutral-200 dark:text-blue-300 font-medium">kvsangathan.nic.in</span>
+            </p>
           </div>
         </div>
       </footer>

@@ -100,7 +100,7 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="en" href="https://kvsangathan.nic.in" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider defaultTheme="light" storageKey="kvs-theme">
+        <ThemeProvider defaultTheme="system" storageKey="kvs-theme">
           {children}
         </ThemeProvider>
       </body>
