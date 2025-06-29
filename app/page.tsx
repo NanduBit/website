@@ -216,50 +216,70 @@ export default function Home() {
             {[
               {
                 icon: BookOpen,
-                title: "Primary Level",
-                subtitle: "Classes I-V",
-                description: "Classes I-V with focus on foundational learning and holistic development",
-                features: ["Activity-based learning", "Three-language formula", "Co-curricular activities"],
+                title: "Primary Education",
+                subtitle: "Classes I - V",
+                description: "Building strong foundations through interactive learning and creative exploration",
+                subjects: ["English", "Hindi", "Mathematics", "EVS"],
+                bgColor: "bg-slate-800 dark:bg-slate-900",
+                iconBg: "bg-blue-600",
               },
               {
                 icon: GraduationCap,
-                title: "Secondary Level",
-                subtitle: "Classes VI-X",
-                description: "Classes VI-X with comprehensive curriculum and skill development",
-                features: ["CBSE curriculum", "Science and mathematics focus", "Sports and cultural activities"],
+                title: "Secondary Education",
+                subtitle: "Classes VI - X",
+                description: "Comprehensive curriculum with focus on conceptual understanding and skill development",
+                subjects: ["English", "Hindi", "Mathematics", "Science", "Social Science"],
+                bgColor: "bg-slate-800 dark:bg-slate-900",
+                iconBg: "bg-green-600",
               },
               {
                 icon: Award,
                 title: "Senior Secondary",
-                subtitle: "Classes XI-XII",
-                description: "Classes XI-XII with specialized streams for career preparation",
-                features: ["Science, Commerce, Humanities", "Career guidance", "College preparation"],
+                subtitle: "Classes XI - XII",
+                description: "Specialized streams for career preparation with advanced learning opportunities",
+                subjects: ["Science", "Commerce", "Humanities", "Vocational"],
+                bgColor: "bg-slate-800 dark:bg-slate-900",
+                iconBg: "bg-purple-600",
               },
             ].map((level, index) => (
               <div
                 key={index}
-                className="bg-neutral-50 dark:bg-gray-900 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-gray-800 hover:shadow-xl dark:hover:shadow-blue-500/20 hover:scale-105 hover:-translate-y-3 transition-all duration-500 transform-gpu cursor-pointer group"
+                className={`${level.bgColor} p-6 sm:p-8 rounded-2xl hover:shadow-xl dark:hover:shadow-blue-500/20 hover:scale-105 hover:-translate-y-3 transition-all duration-500 transform-gpu cursor-pointer group relative overflow-hidden`}
               >
-                <level.icon className="h-10 w-10 sm:h-12 sm:w-12 text-black dark:text-white mb-4 sm:mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 transform-gpu" />
-                <h4 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-2 group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300">
+                {/* Background decoration */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/5 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+                
+                {/* Icon */}
+                <div className={`w-12 h-12 ${level.iconBg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform-gpu relative z-10`}>
+                  <level.icon className="h-6 w-6 text-white" />
+                </div>
+
+                {/* Class badge */}
+                <div className="inline-block bg-gray-700 dark:bg-gray-600 text-gray-300 dark:text-gray-200 text-xs font-medium px-3 py-1 rounded-full mb-4 relative z-10">
+                  {level.subtitle}
+                </div>
+
+                {/* Title */}
+                <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 group-hover:text-blue-200 transition-colors duration-300 relative z-10">
                   {level.title}
                 </h4>
-                <p className="text-sm sm:text-base text-neutral-600 dark:text-gray-400 mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors duration-300">
-                  {level.subtitle}
-                </p>
-                <p className="text-sm sm:text-base text-neutral-600 dark:text-gray-400 mb-4 leading-relaxed group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors duration-300">
+
+                {/* Description */}
+                <p className="text-sm sm:text-base text-gray-300 dark:text-gray-400 mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 relative z-10">
                   {level.description}
                 </p>
-                <ul className="space-y-2 text-sm sm:text-base text-neutral-600 dark:text-gray-400">
-                  {level.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center space-x-2 group/item">
-                      <ArrowRight className="h-3 w-3 text-black dark:text-white group-hover/item:scale-125 group-hover/item:rotate-90 transition-all duration-300 transform-gpu" />
-                      <span className="group-hover/item:text-black dark:group-hover/item:text-white group-hover/item:translate-x-1 transition-all duration-300">
-                        {feature}
-                      </span>
-                    </li>
+
+                {/* Subject tags */}
+                <div className="flex flex-wrap gap-2 relative z-10">
+                  {level.subjects.map((subject, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-gray-700 dark:bg-gray-600 text-gray-300 dark:text-gray-200 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-600 dark:hover:bg-gray-500 hover:text-white transition-all duration-300"
+                    >
+                      {subject}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
