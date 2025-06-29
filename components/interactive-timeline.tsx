@@ -1,8 +1,6 @@
 "use client"
 
 import type React from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Calendar, Users, Award, BookOpen, Building2, Globe, Trophy, GraduationCap } from "lucide-react"
 
 interface TimelineEvent {
@@ -157,16 +155,16 @@ export function InteractiveTimeline() {
                     index % 2 === 0 ? "lg:mr-auto lg:pr-6 xl:pr-8" : "lg:ml-auto lg:pl-6 xl:pl-8"
                   }`}
                 >
-                  <Card className="group-hover:shadow-xl sm:group-hover:shadow-2xl dark:group-hover:shadow-blue-500/20 group-hover:-translate-y-1 sm:group-hover:-translate-y-3 transition-all duration-700 border border-neutral-200 sm:border-2 dark:border-gray-700 overflow-hidden bg-white dark:bg-gray-800 backdrop-blur-sm hover:border-neutral-400 dark:hover:border-blue-500/50 transform-gpu group-hover:scale-[1.02] hover:bg-neutral-50 dark:hover:bg-gray-750">
-                    <CardContent className="p-4 sm:p-6 md:p-8">
+                  <div className="group-hover:shadow-xl sm:group-hover:shadow-2xl dark:group-hover:shadow-blue-500/20 group-hover:-translate-y-1 sm:group-hover:-translate-y-3 transition-all duration-700 border border-neutral-200 sm:border-2 dark:border-gray-700 overflow-hidden bg-white dark:bg-gray-800 backdrop-blur-sm hover:border-neutral-400 dark:hover:border-blue-500/50 transform-gpu group-hover:scale-[1.02] hover:bg-neutral-50 dark:hover:bg-gray-750 rounded-lg">
+                    <div className="p-4 sm:p-6 md:p-8">
                       {/* Header */}
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 md:mb-6 gap-2 sm:gap-4">
                         <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
-                          <Badge
-                            className={`${categoryColors[event.category]} text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 shadow-md sm:shadow-lg dark:shadow-blue-500/20 whitespace-nowrap transition-all duration-300 hover:scale-105 transform-gpu`}
+                          <div
+                            className={`${categoryColors[event.category]} text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 shadow-md sm:shadow-lg dark:shadow-blue-500/20 whitespace-nowrap transition-all duration-300 hover:scale-105 transform-gpu rounded-full`}
                           >
                             {categoryLabels[event.category]}
-                          </Badge>
+                          </div>
                           <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white transition-all duration-300 group-hover:scale-105 transform-gpu">
                             {event.year}
                           </span>
@@ -197,8 +195,8 @@ export function InteractiveTimeline() {
                           </div>
                         ))}
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
