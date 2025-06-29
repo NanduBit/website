@@ -59,7 +59,7 @@ export default function Home() {
       <section className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 transition-colors duration-300">
         <div className="container mx-auto text-center">
           <div className="mb-8 sm:mb-12">
-            <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-6 sm:mb-8 hover:scale-110 hover:rotate-12 transition-all duration-700 cursor-pointer transform-gpu hover:shadow-2xl dark:hover:shadow-blue-500/30 rounded-full">
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-6 sm:mb-8 select-none pointer-events-none">
               <Image
                 src="/kvs-logo-clean.png"
                 alt="Kendriya Vidyalaya Sangathan Logo"
