@@ -220,8 +220,6 @@ export default function Home() {
                 subtitle: "Classes I - V",
                 description: "Building strong foundations through interactive learning and creative exploration",
                 subjects: ["English", "Hindi", "Mathematics", "EVS"],
-                bgColor: "bg-slate-800 dark:bg-slate-900",
-                iconBg: "bg-blue-600",
               },
               {
                 icon: GraduationCap,
@@ -229,8 +227,6 @@ export default function Home() {
                 subtitle: "Classes VI - X",
                 description: "Comprehensive curriculum with focus on conceptual understanding and skill development",
                 subjects: ["English", "Hindi", "Mathematics", "Science", "Social Science"],
-                bgColor: "bg-slate-800 dark:bg-slate-900",
-                iconBg: "bg-green-600",
               },
               {
                 icon: Award,
@@ -238,34 +234,32 @@ export default function Home() {
                 subtitle: "Classes XI - XII",
                 description: "Specialized streams for career preparation with advanced learning opportunities",
                 subjects: ["Science", "Commerce", "Humanities", "Vocational"],
-                bgColor: "bg-slate-800 dark:bg-slate-900",
-                iconBg: "bg-purple-600",
               },
             ].map((level, index) => (
               <div
                 key={index}
-                className={`${level.bgColor} p-6 sm:p-8 rounded-2xl hover:shadow-xl dark:hover:shadow-blue-500/20 hover:scale-105 hover:-translate-y-3 transition-all duration-500 transform-gpu cursor-pointer group relative overflow-hidden`}
+                className="bg-neutral-50 dark:bg-gray-900 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-gray-800 hover:shadow-xl dark:hover:shadow-blue-500/20 hover:scale-105 hover:-translate-y-3 transition-all duration-500 transform-gpu cursor-pointer group relative overflow-hidden"
               >
                 {/* Background decoration */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/5 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-black/5 dark:from-white/5 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
                 
                 {/* Icon */}
-                <div className={`w-12 h-12 ${level.iconBg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform-gpu relative z-10`}>
+                <div className="w-12 h-12 bg-black dark:bg-gradient-to-br dark:from-blue-600 dark:to-blue-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform-gpu relative z-10 shadow-lg dark:shadow-blue-500/30">
                   <level.icon className="h-6 w-6 text-white" />
                 </div>
 
                 {/* Class badge */}
-                <div className="inline-block bg-gray-700 dark:bg-gray-600 text-gray-300 dark:text-gray-200 text-xs font-medium px-3 py-1 rounded-full mb-4 relative z-10">
+                <div className="inline-block bg-neutral-200 dark:bg-gray-700 text-neutral-700 dark:text-gray-300 text-xs font-medium px-3 py-1 rounded-full mb-4 relative z-10">
                   {level.subtitle}
                 </div>
 
                 {/* Title */}
-                <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 group-hover:text-blue-200 transition-colors duration-300 relative z-10">
+                <h4 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-4 group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300 relative z-10">
                   {level.title}
                 </h4>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-gray-300 dark:text-gray-400 mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 relative z-10">
+                <p className="text-sm sm:text-base text-neutral-600 dark:text-gray-400 mb-6 leading-relaxed group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors duration-300 relative z-10">
                   {level.description}
                 </p>
 
@@ -274,7 +268,7 @@ export default function Home() {
                   {level.subjects.map((subject, idx) => (
                     <span
                       key={idx}
-                      className="bg-gray-700 dark:bg-gray-600 text-gray-300 dark:text-gray-200 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-600 dark:hover:bg-gray-500 hover:text-white transition-all duration-300"
+                      className="bg-neutral-200 dark:bg-gray-700 text-neutral-700 dark:text-gray-300 text-xs font-medium px-3 py-1 rounded-full hover:bg-neutral-300 dark:hover:bg-gray-600 hover:text-black dark:hover:text-white transition-all duration-300"
                     >
                       {subject}
                     </span>
