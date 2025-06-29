@@ -25,47 +25,34 @@ const ThemeProviderContext = React.createContext<ThemeProviderState>(initialStat
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  storageKey = "kvs-theme",
+  storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = React.useState<Theme>(defaultTheme)
-  const [mounted, setMounted] = React.useState(false)
+  const [theme, setTheme] = React.useState<Theme>(
+    () => (typeof window !== "undefined" && (localStorage.getItem(storageKey) as Theme)) || defaultTheme,
+  )
 
   React.useEffect(() => {
-    setMounted(true)
-    const stored = localStorage.getItem(storageKey) as Theme
-    if (stored) {
-      setTheme(stored)
-    }
-  }, [storageKey])
-
-  React.useEffect(() => {
-    if (!mounted) return
-
     const root = window.document.documentElement
+
     root.classList.remove("light", "dark")
 
     if (theme === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+
       root.classList.add(systemTheme)
       return
     }
 
     root.classList.add(theme)
-  }, [theme, mounted])
+  }, [theme])
 
   const value = {
     theme,
     setTheme: (theme: Theme) => {
-      if (mounted) {
-        localStorage.setItem(storageKey, theme)
-      }
+      localStorage.setItem(storageKey, theme)
       setTheme(theme)
     },
-  }
-
-  if (!mounted) {
-    return <div className="min-h-screen bg-white">{children}</div>
   }
 
   return (
