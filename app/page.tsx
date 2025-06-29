@@ -32,7 +32,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-gray-800 bg-white/95 dark:bg-gray-950/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-950/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 hover:scale-110 hover:rotate-12 transition-all duration-500 transform-gpu select-none">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 select-none pointer-events-none">
               <Image
                 src="/kvs-logo-clean.png"
                 alt="KVS Logo"
@@ -43,11 +43,17 @@ export default function Home() {
                 draggable={false}
               />
             </div>
-            <div>
-              <h1 className="text-lg sm:text-xl font-bold text-black dark:text-white group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300 select-none">
+            <div className="min-w-0 flex-1">
+              {/* Full text for larger screens */}
+              <h1 className="hidden sm:block text-lg md:text-xl font-bold text-black dark:text-white group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300 select-none">
                 Kendriya Vidyalaya Sangathan
               </h1>
-              <p className="text-xs sm:text-sm text-neutral-600 dark:text-gray-400 group-hover:text-neutral-800 dark:group-hover:text-gray-300 transition-colors duration-300 select-none">
+              {/* Shortened text for small screens */}
+              <h1 className="block sm:hidden text-lg font-bold text-black dark:text-white group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300 select-none">
+                KVS
+              </h1>
+              {/* Excellence text - hidden on mobile */}
+              <p className="hidden md:block text-xs sm:text-sm text-neutral-600 dark:text-gray-400 group-hover:text-neutral-800 dark:group-hover:text-gray-300 transition-colors duration-300 select-none">
                 Excellence in Education
               </p>
             </div>
@@ -429,7 +435,7 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-3 group cursor-pointer">
-              <div className="relative w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform-gpu select-none">
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform-gpu select-none pointer-events-none">
                 <Image
                   src="/kvs-logo-clean.png"
                   alt="KVS Logo"
