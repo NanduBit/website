@@ -32,21 +32,22 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-gray-800 bg-white/95 dark:bg-gray-950/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-950/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 hover:scale-110 hover:rotate-12 transition-all duration-500 transform-gpu">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 hover:scale-110 hover:rotate-12 transition-all duration-500 transform-gpu select-none">
               <Image
                 src="/kvs-logo-clean.png"
                 alt="KVS Logo"
                 fill
-                className="object-contain dark:brightness-0 dark:invert"
+                className="object-contain dark:brightness-0 dark:invert select-none pointer-events-none"
                 priority
                 unoptimized
+                draggable={false}
               />
             </div>
             <div>
-              <h1 className="text-lg sm:text-xl font-bold text-black dark:text-white group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300">
+              <h1 className="text-lg sm:text-xl font-bold text-black dark:text-white group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300 select-none">
                 Kendriya Vidyalaya Sangathan
               </h1>
-              <p className="text-xs sm:text-sm text-neutral-600 dark:text-gray-400 group-hover:text-neutral-800 dark:group-hover:text-gray-300 transition-colors duration-300">
+              <p className="text-xs sm:text-sm text-neutral-600 dark:text-gray-400 group-hover:text-neutral-800 dark:group-hover:text-gray-300 transition-colors duration-300 select-none">
                 Excellence in Education
               </p>
             </div>
@@ -64,9 +65,10 @@ export default function Home() {
                 src="/kvs-logo-clean.png"
                 alt="Kendriya Vidyalaya Sangathan Logo"
                 fill
-                className="object-contain dark:brightness-0 dark:invert"
+                className="object-contain dark:brightness-0 dark:invert select-none pointer-events-none"
                 priority
                 unoptimized
+                draggable={false}
               />
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-4 sm:mb-6 tracking-tight hover:text-gray-800 dark:hover:text-blue-200 transition-colors duration-300">
@@ -427,26 +429,27 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-3 group cursor-pointer">
-              <div className="relative w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform-gpu">
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform-gpu select-none">
                 <Image
                   src="/kvs-logo-clean.png"
                   alt="KVS Logo"
                   fill
-                  className="object-contain dark:brightness-0 dark:invert"
+                  className="object-contain dark:brightness-0 dark:invert select-none pointer-events-none"
                   unoptimized
+                  draggable={false}
                 />
               </div>
               <div>
-                <p className="text-sm sm:text-base font-semibold text-black dark:text-white group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300">
+                <p className="text-sm sm:text-base font-semibold text-black dark:text-white group-hover:text-gray-800 dark:group-hover:text-blue-200 transition-colors duration-300 select-none">
                   Kendriya Vidyalaya Sangathan
                 </p>
-                <p className="text-xs sm:text-sm text-neutral-600 dark:text-gray-400 group-hover:text-neutral-800 dark:group-hover:text-gray-300 transition-colors duration-300">
+                <p className="text-xs sm:text-sm text-neutral-600 dark:text-gray-400 group-hover:text-neutral-800 dark:group-hover:text-gray-300 transition-colors duration-300 select-none">
                   Ministry of Education, Government of India
                 </p>
               </div>
             </div>
             <div className="text-center sm:text-right">
-              <p className="text-xs sm:text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-800 dark:hover:text-gray-300 transition-colors duration-300">
+              <p className="text-xs sm:text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-800 dark:hover:text-gray-300 transition-colors duration-300 select-none">
                 © 2024 Kendriya Vidyalaya Sangathan. All rights reserved.
               </p>
             </div>
@@ -454,7 +457,7 @@ export default function Home() {
 
           {/* Disclaimer */}
           <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-neutral-200 dark:border-gray-800 text-center">
-            <p className="text-xs sm:text-sm text-neutral-500 dark:text-gray-500 leading-relaxed max-w-4xl mx-auto hover:text-neutral-700 dark:hover:text-gray-400 transition-colors duration-300">
+            <p className="text-xs sm:text-sm text-neutral-500 dark:text-gray-500 leading-relaxed max-w-4xl mx-auto hover:text-neutral-700 dark:hover:text-gray-400 transition-colors duration-300 select-none">
               <strong className="text-neutral-600 dark:text-gray-400">DISCLAIMER:</strong> This website is{" "}
               <strong className="text-black dark:text-white">NOT officially affiliated</strong> with Kendriya Vidyalaya
               Sangathan (KVS) or the Government of India. Created for{" "}
