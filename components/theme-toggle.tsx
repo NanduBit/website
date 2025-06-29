@@ -1,52 +1,20 @@
 "use client"
-import { Moon, Sun, Monitor } from "lucide-react"
-import { useTheme } from "./theme-provider"
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "@/components/theme-provider"
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
-
-  const cycleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark")
-    } else if (theme === "dark") {
-      setTheme("system")
-    } else {
-      setTheme("light")
-    }
-  }
-
-  const getIcon = () => {
-    switch (theme) {
-      case "light":
-        return <Sun className="h-5 w-5" />
-      case "dark":
-        return <Moon className="h-5 w-5" />
-      default:
-        return <Monitor className="h-5 w-5" />
-    }
-  }
-
-  const getLabel = () => {
-    switch (theme) {
-      case "light":
-        return "Light mode"
-      case "dark":
-        return "Dark mode"
-      default:
-        return "System mode"
-    }
-  }
+  const { setTheme } = useTheme()
 
   return (
-    <button
-      onClick={cycleTheme}
-      className="fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-white dark:bg-neutral-900 border-2 border-neutral-200 dark:border-neutral-700 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:scale-110 hover:rotate-12"
-      title={getLabel()}
-      aria-label={getLabel()}
-    >
-      <div className="text-neutral-700 dark:text-neutral-300 group-hover:scale-110 transition-transform duration-300">
-        {getIcon()}
-      </div>
-    </button>
+    <div className="relative">
+      <button
+        onClick={() => setTheme("light")}
+        className="hover:scale-110 transition-transform duration-300 bg-transparent border border-neutral-200 dark:border-gray-700 rounded-md p-2 hover:bg-neutral-100 dark:hover:bg-gray-800"
+      >
+        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 top-2 left-2" />
+        <span className="sr-only">Toggle theme</span>
+      </button>
+    </div>
   )
 }
