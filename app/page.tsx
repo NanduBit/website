@@ -43,7 +43,6 @@ export default function KendrivaVidyalayaWebsite() {
                 height={100}
                 className="object-contain group-hover:rotate-12 transition-transform duration-500 dark:brightness-0 dark:invert"
                 priority
-                unoptimized
               />
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 tracking-tight hover:text-gray-200 dark:hover:text-blue-200 transition-colors duration-300 leading-tight">
@@ -393,7 +392,6 @@ export default function KendrivaVidyalayaWebsite() {
                 width={70}
                 height={70}
                 className="object-contain group-hover:rotate-180 transition-transform duration-700 dark:brightness-0 dark:invert"
-                unoptimized
               />
             </div>
             <h5 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 hover:text-gray-200 dark:hover:text-blue-200 transition-colors duration-300">
