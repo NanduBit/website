@@ -456,7 +456,7 @@ export default function Home() {
             </div>
             <div className="text-center sm:text-right">
               <p className="text-xs sm:text-sm text-neutral-600 dark:text-gray-400 hover:text-neutral-800 dark:hover:text-gray-300 transition-colors duration-300 select-none">
-                © 2024 Kendriya Vidyalaya Sangathan. All rights reserved.
+                © 2025 Kendriya Vidyalaya Sangathan. All rights reserved.
               </p>
             </div>
           </div>
